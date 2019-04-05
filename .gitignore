@@ -1,0 +1,14 @@
+/*
+!.gitignore
+!README.md
+
+# ajouter tout les fichier que vous souhaiter ajouter dans le repository
+# surtout ne pas ignorer le thème qu'on développe
+
+!/wp-content
+/wp-content/*
+!/wp-content/themes
+/wp-content/themes/*
+!/wp-content/themes/dw-theme
+/wp-content/themes/dw-theme/public
+/wp-content/themes/dw-theme/.idea
