@@ -35,3 +35,34 @@ function dw_getMenu($location)
 //    var_dump($post,$item);die();
     return $menu;
 }
+
+/* **
+ *  Register custom post type
+ */
+
+function dw_register_post_types()
+{
+    register_post_type('recipe', [
+        'label' => 'Recettes',
+        'labels' => [
+            'singular_name' => 'recettes',
+            'add_new_item' => 'Ajouter une recette'
+        ],
+        'public' => true,
+        'description' => 'Les différentes recettes disponible sur le site',
+        'menu_icon' => 'dashicons-carrot',
+        'menu_position' => 5,
+    ]);
+}
+
+add_action('init', 'dw_register_post_types');
+
+/* **
+ *  Query recipes
+ */
+
+$recipes = new WP_Query([
+    'post_type' => 'recipe',
+    'order' => 'DESC',
+    'orderby' => 'date'
+]);
